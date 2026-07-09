@@ -8,7 +8,7 @@ pipeline {
 
 
 parameters {
-        string(name: 'NAME', defaultValue: 'Zouhaier', description: 'Please tell me your name')
+        string(name: 'NAME', defaultValue: 'Youssef', description: 'Please tell me your name')
         text(name: 'DESC', defaultValue: 'Pipeline CI/CD Jenkins local avec GitHub', description: 'Description du Job')
         booleanParam(name: 'SKIP_TEST', defaultValue: false, description: 'Skip running Tests ?')
         choice(name: 'BRANCH', choices: ['main'], description: 'Choose Git branch')
