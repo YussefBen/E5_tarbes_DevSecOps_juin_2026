@@ -1,13 +1,11 @@
 pipeline {
-
     agent any
 
-   tools {
-    maven 'Maven-3.9'
-}
+    tools {
+        maven 'Maven-3.9'
+    }
 
-
-parameters {
+    parameters {
         string(name: 'NAME', defaultValue: 'Youssef', description: 'Please tell me your name')
         text(name: 'DESC', defaultValue: 'Pipeline CI/CD Jenkins local avec GitHub', description: 'Description du Job')
         booleanParam(name: 'SKIP_TEST', defaultValue: false, description: 'Skip running Tests ?')
@@ -64,9 +62,8 @@ parameters {
             }
         }
 
-
 /*
-stage('05 - SONARQUBE ANALYSIS') {
+        stage('05 - SONARQUBE ANALYSIS') {
             steps {
                 echo "Scanning source code with SonarQube..."
                 bat """
@@ -76,6 +73,7 @@ stage('05 - SONARQUBE ANALYSIS') {
                 """
             }
         }
+*/
 
         stage('06 - DOCKER BUILD') {
             steps {
@@ -85,14 +83,13 @@ stage('05 - SONARQUBE ANALYSIS') {
                 """
             }
         }
-*/
+
         stage('07 - DEPLOY LOCAL') {
             steps {
                 echo "Deploying application locally with Docker..."
                 bat """
                 docker stop %APP_NAME% || exit /b 0
                 docker rm %APP_NAME% || exit /b 0
-
                 docker run -d --name %APP_NAME% -p 8080:8080 %DOCKER_IMAGE%:latest
                 """
             }
@@ -103,7 +100,6 @@ stage('05 - SONARQUBE ANALYSIS') {
         success {
             echo "PIPELINE SUCCESS - Application deployed locally: http://localhost:8080"
         }
-
         failure {
             echo "PIPELINE FAILED - Please check Jenkins logs"
         }
