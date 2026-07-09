@@ -19,7 +19,7 @@ parameters {
         APP_NAME = "e5-tarbes-devsecops-app"
         DOCKER_IMAGE = "e5-tarbes-devsecops-app"
         SONAR_URL = "http://localhost:9000"
-        GITHUB_REPO = "https://github.com/YussefBen/StartUp_Agile_DevOps.git"
+        GITHUB_REPO = "https://github.com/YussefBen/E5_tarbes_DevSecOps_juin_2026.git"
     }
 
     stages {
