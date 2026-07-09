@@ -25,7 +25,7 @@ pipeline {
 
         DOCKER_IMAGE = "e5-tarbes-devsecops-app"
 
-        GITHUB_REPO = "https://github.com/touatizouhaier/E5_tarbes_DevSecOps_juin_2026.git"
+        GITHUB_REPO = "https://github.com/YussefBen/E5_tarbes_DevSecOps_juin_2026.git"
 
         TRIVY_EXE = "C:\\ProgramData\\chocolatey\\bin\\trivy.exe"
 
